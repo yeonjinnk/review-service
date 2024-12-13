@@ -18,4 +18,9 @@ public class Product {
     private Long id;
     private Long reviewCount;
     private Double score;
+
+    public void updateCountAndScore(Long totalCount, Double averageScore) {
+        this.reviewCount = totalCount;
+        this.score = averageScore;
+    }
 }

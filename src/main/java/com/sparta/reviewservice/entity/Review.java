@@ -2,6 +2,7 @@ package com.sparta.reviewservice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Builder
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,15 +21,14 @@ public class Review {
 
     private Long userId;
 
-    @ManyToOne
-    @JoinColumn(name = "productId")
-    private Product product;
+    private Long productId;
 
     private Integer score;
+
     private String imageUrl;
+
     private String content;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
-
 }

@@ -1,5 +1,6 @@
 package com.sparta.reviewservice.dto;
 
+import com.sparta.reviewservice.entity.Review;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -12,4 +13,8 @@ public class ReviewResponseDto {
     private Double score; //평균 점수
     private Long cursor; //다음 페이지 커서 값
     private List<ReviewDto> reviews; //리뷰 목록
+
+//    public ReviewResponseDto(Review review) {
+//        this(review.)
+//    }
 }
